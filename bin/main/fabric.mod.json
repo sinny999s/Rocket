@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "rocket",
+  "version": "1.0.01",
+  "name": "Rocket",
+  "description": "Cracked Client Made Open Source And Better Brought To You By Kfzv And Sinny",
+  "authors": [
+    "Kfzv",
+    "Sinny"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/rich/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "preLaunch": [
+      "rich.util.mods.config.wave.WaveCapesConfigOverride"
+    ],
+    "client": [
+      "rich.Initialization"
+    ]
+  },
+  "accessWidener": "accesswidener",
+  "mixins": [
+    "mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "\u003e\u003d0.18.4",
+    "fabric-api": "*",
+    "minecraft": "~1.21.11",
+    "java": "\u003e\u003d21"
+  },
+  "jars": [
+    {
+      "file": "META-INF/jars/netty-codec-socks-4.1.82.Final.jar"
+    },
+    {
+      "file": "META-INF/jars/netty-handler-proxy-4.1.82.Final.jar"
+    }
+  ]
+}

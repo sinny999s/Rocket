@@ -1,0 +1,62 @@
+## Migrating to Mojang Mappings
+
+These instructions cover migration from Yarn to Mojang Mappings.
+1.  You'll need a command to migrate your mappings to Mojang Mappings, for example gradlew migrateMappings --mappings "net.minecraft:mappings:1.21.10". Replace 1.21.10 with the version of Minecraft you are migrating from. This must be the same version of Minecraft you are currently running. DO NOT modify your gradle.properties or build.gradle yet.
+
+2.  Run the command in the root of your Gradle project, either through the terminal, or by adding it as a run configuration in IntelliJ Idea.
+
+3.  Your migrated sources will appear in remappedSrc. Verify that the migration produced valid migrated code.
+
+4.  Copy the sources from remappedSrc to the original folder. Keep the original sources backed up just in case.
+
+5.  If you are coming from Yarn, you can now replace your mappings in your build.gradle's dependencies section with Mojang Mappings (i.e. mappings loom.officialMojangMappings()).
+
+6.  Refresh the Gradle project in your IDE.
+
+7.  Check and update any Mixin targets that may be outdated.
+
+
+```
+gradlew migrateMappings --mappings "net.minecraft:mappings:1.21.10"
+```
+
+
+```
+1.21.10
+```
+
+
+```
+gradle.properties
+```
+
+
+```
+build.gradle
+```
+
+
+```
+remappedSrc
+```
+
+
+```
+remappedSrc
+```
+
+
+```
+build.gradle
+```
+
+
+```
+loom.officialMojangMappings()
+```
+
+Your dependencies section should now contain this:
+
+```
+dependencies { [...] mappings loom.officialMojangMappings() }
+```

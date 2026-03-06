@@ -1,0 +1,26 @@
+
+package rich.modules.module;
+
+import lombok.Generated;
+import rich.modules.module.ModuleRepository;
+import rich.modules.module.ModuleStructure;
+
+public class ModuleBuilder {
+    private final ModuleRepository repository;
+
+    public ModuleBuilder add(ModuleStructure module) {
+        this.repository.registerModule(module, false);
+        return this;
+    }
+
+    public ModuleBuilder hidden(ModuleStructure module) {
+        this.repository.registerModule(module, true);
+        return this;
+    }
+
+    @Generated
+    public ModuleBuilder(ModuleRepository repository) {
+        this.repository = repository;
+    }
+}
+
